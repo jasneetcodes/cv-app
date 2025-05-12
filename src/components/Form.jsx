@@ -1,8 +1,12 @@
-import { useState } from "react";
+import GeneralInfo from "./GeneralInfo"
 
 function Form(){
 
-    return(<h1>Hello</h1>)
+    return(
+        <>
+            <GeneralInfo/>
+        </>
+    )
 }
 
 export default Form
