@@ -1,12 +1,13 @@
-import GeneralInfo from "./GeneralInfo"
-
-function Form(){
-
-    return(
-        <>
-            <GeneralInfo/>
-        </>
-    )
+import EducationInfo from "./EducationInfo";
+import GeneralInfo from "./GeneralInfo";
+import "../styles/formStyles.css"
+function Form() {
+  return (
+    <div>
+      <GeneralInfo />
+      <EducationInfo />
+    </div>
+  );
 }
 
-export default Form
+export default Form;
