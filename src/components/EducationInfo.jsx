@@ -4,6 +4,7 @@ function EducationInfo(){
 
     return(
         <>
+        <h2>Education Info</h2>
         <label htmlFor="studySchool">School</label>
         <input type="text" id="studySchool" />
 

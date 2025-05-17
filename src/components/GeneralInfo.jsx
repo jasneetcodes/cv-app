@@ -4,7 +4,7 @@ function GeneralInfo(){
 
     return(
         <>
-        
+        <h2>General Info</h2>
         <label htmlFor="name">Name</label>
         <input id="name" ></input>
         

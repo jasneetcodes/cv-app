@@ -5,9 +5,11 @@ import ExperienceInfo from "./ExperienceInfo";
 function Form() {
   return (
     <div className="form-container">
+      <h1>Resume Builder</h1>
       <GeneralInfo />
       <EducationInfo />
       <ExperienceInfo/>
+      <button>Create Resume</button>
     </div>
   );
 }

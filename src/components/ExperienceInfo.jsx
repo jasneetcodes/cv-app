@@ -2,6 +2,7 @@ function ExperienceInfo(){
 
     return(
         <>
+        <h2>Experience Info</h2>
         <label htmlFor="company">Company Name</label>
         <input type="text" id="company" />
 
