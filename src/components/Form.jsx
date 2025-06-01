@@ -7,6 +7,7 @@ function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
+  const [active, setActive] = useState(0);
 
   function handleName(e) {
     setName(e.target.value);
@@ -17,14 +18,29 @@ function Form() {
   function handleNumber(e) {
     setNumber(e.target.value);
   }
+
+
   return (
-    <div className="form-container">
+
+    <>
+    {active == 0 ? (
+      <div className="form-container">
       <h1>Resume Builder</h1>
       <GeneralInfo name={name} email={email} number={number} nameHandle={handleName} emailHandle={handleEmail} numberHandle={handleNumber}/>
-      <EducationInfo />
-      <ExperienceInfo/>
-      <button>Create Resume</button>
+ 
+      <button onClick={() => setActive(1)}>Create Resume</button>
     </div>
+    ) : (
+      <div className="form-container">
+      <h1>{name}</h1>
+      
+ 
+      <button onClick={() => setActive(0)}>Edit Resume</button>
+    </div>
+    )}
+
+  </>
+
   );
 }
 
