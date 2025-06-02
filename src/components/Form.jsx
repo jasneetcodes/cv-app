@@ -110,36 +110,57 @@ function Form() {
           <hr />
           <div className="education">
             <div className="educationStudy">
-            <p><b>{school}</b></p>
-            <p><em>{studyTitle}</em></p>
+              <p>
+                <b>{school}</b>
+              </p>
+              <p>
+                <em>{studyTitle}</em>
+              </p>
             </div>
-            <div className="educationTime"><p><em>{studyTime}</em></p></div>
+            <div className="educationTime">
+              <p>
+                <em>{studyTime}</em>
+              </p>
+            </div>
           </div>
-          
+
           <h3>Experience</h3>
           <hr />
 
-          <div>
-          {experiences.map((exp) => (
-            <div>
-              <div>
-                <div>
-                  <p>Position Title:{exp.companyPosition}</p>
-                  <p>Company Name:{exp.company}</p>
-                </div>
-                 <div>
-                    <p>
-                      From:{exp.dateFrom} Till:{exp.dateTill}
-                    </p>
+          <div className="experiences">
+            {experiences.map((exp) => {
+              const formattedResp = exp.responsibilities
+                .split("•")
+                .map((res) => res.trim())
+                .filter((res) => res.length > 0);
+              return (
+                <div className="experience">
+                  <div className="experienceDetails">
+                    <div>
+                      <p>
+                        <b>{exp.title}</b>
+                      </p>
+                      <p>
+                        <em>{exp.company}</em>
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        {exp.dateFrom} - {exp.dateTill}
+                      </p>
+                    </div>
                   </div>
-              </div>
-              <div>
-              <p>Duties:{exp.responsibilities}</p>
-              </div>
-              </div>
-          ))}
+                  <div>
+                    <ul>
+                      {formattedResp.map((res, index) => (
+                        <li key={index}>{res}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-
 
           <button onClick={() => setActive(0)}>Edit Resume</button>
         </div>

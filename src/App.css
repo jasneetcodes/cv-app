@@ -79,3 +79,33 @@ hr{
 .educationStudy > p:first-child{
   font-size: 18px;
 }
+
+
+.experiences{
+  display: flex;
+  flex-direction: column;
+}
+
+.experience{
+  display: flex;
+  flex-direction: column;
+}
+
+.experienceDetails{
+  display: flex;
+  justify-content: space-between;
+}
+
+.experienceDetails > * p{
+  text-align: start;
+  margin: 4px;
+}
+
+.experienceDetails > * b{
+  font-size: 18px;
+ 
+}
+
+.experience > * ul {
+  text-align: start;
+}
