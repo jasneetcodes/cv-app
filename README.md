@@ -19,7 +19,7 @@ This is a simple CV/resumé generator built with React and Vite. Users can enter
 
 ## Demo
 
-Click here: [https://your-live-demo-link.com](https://your-live-demo-link.com)  
+Click here: [https://cv-app-lac.vercel.app/](https://cv-app-lac.vercel.app/)  
 
 
 ---
