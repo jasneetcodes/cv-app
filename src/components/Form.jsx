@@ -37,7 +37,14 @@ function Form() {
     {active == 0 ? (
       <div className="form-container">
       <h1>Resume Builder</h1>
-      <GeneralInfo name={name} email={email} number={number} nameHandle={handleName} emailHandle={handleEmail} numberHandle={handleNumber}/>
+      <GeneralInfo 
+      name={name} 
+      email={email} 
+      number={number} 
+      nameHandle={(e) => setName(e.target.value)}
+      emailHandle={(e) => setEmail(e.target.value)}
+      numberHandle={(e) => setNumber(e.target.value)}
+      />
       <EducationInfo 
       school={school} 
       title={studyTitle} 
