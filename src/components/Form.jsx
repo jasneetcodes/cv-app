@@ -1,6 +1,5 @@
 import EducationInfo from "./EducationInfo";
 import GeneralInfo from "./GeneralInfo";
-import "../styles/formStyles.css";
 import ExperienceInfo from "./ExperienceInfo";
 import { useState } from "react";
 function Form() {
@@ -64,7 +63,7 @@ function Form() {
             titleHandle={(e) => setStudyTitle(e.target.value)}
             timeHandle={(e) => setStudyTime(e.target.value)}
           />
-
+          <h2>Experience Info</h2>
           {experiences.map((exp, index) => (
             <ExperienceInfo
               key={index}
@@ -99,25 +98,48 @@ function Form() {
           <button onClick={() => setActive(1)}>Create Resume</button>
         </div>
       ) : (
-        <div className="form-container">
-          <p>Name:{name}</p>
-          <p>Email:{email}</p>
-          <p>Number:{number}</p>
+        <div className="resume">
+          <h1 className="resumeName">{name}</h1>
+          <div className="resumeInfo">
+            <p>{email}</p>
+            <p>|</p>
+            <p>{number}</p>
+          </div>
+
+          <h3>Education</h3>
           <hr />
-          <p>school:{school}</p>
-          <p>studyTitle:{studyTitle}</p>
-          <p>studyTime:{studyTime}</p>
+          <div className="education">
+            <div className="educationStudy">
+            <p><b>{school}</b></p>
+            <p><em>{studyTitle}</em></p>
+            </div>
+            <div className="educationTime"><p><em>{studyTime}</em></p></div>
+          </div>
+          
+          <h3>Experience</h3>
           <hr />
+
+          <div>
           {experiences.map((exp) => (
-            <>
-              <p>Company Name:{exp.company}</p>
-              <p>Position Title:{exp.companyPosition}</p>
-              <p>
-                From:{exp.dateFrom} Till:{exp.dateTill}
-              </p>
+            <div>
+              <div>
+                <div>
+                  <p>Position Title:{exp.companyPosition}</p>
+                  <p>Company Name:{exp.company}</p>
+                </div>
+                 <div>
+                    <p>
+                      From:{exp.dateFrom} Till:{exp.dateTill}
+                    </p>
+                  </div>
+              </div>
+              <div>
               <p>Duties:{exp.responsibilities}</p>
-            </>
+              </div>
+              </div>
           ))}
+          </div>
+
 
           <button onClick={() => setActive(0)}>Edit Resume</button>
         </div>
