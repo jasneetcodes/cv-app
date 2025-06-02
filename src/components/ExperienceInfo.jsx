@@ -45,7 +45,7 @@ function ExperienceInfo({
         onChange={dateTillHandle}
       />
 
-      <label htmlFor="responsibilities">Main Responsibilities</label>
+      <label htmlFor="responsibilities">Main Responsibilities ( Use '-' only to divide duties )</label>
       <textarea
         rows={5}
         id="responsibilities"

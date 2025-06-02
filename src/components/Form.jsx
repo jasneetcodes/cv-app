@@ -130,7 +130,7 @@ function Form() {
           <div className="experiences">
             {experiences.map((exp) => {
               const formattedResp = exp.responsibilities
-                .split("•")
+                .split("-")
                 .map((res) => res.trim())
                 .filter((res) => res.length > 0);
               return (
